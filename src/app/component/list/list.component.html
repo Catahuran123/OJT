@@ -1,0 +1,108 @@
+<form class="row g-3" style="margin: 15px">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="inputEmail4"
+      [(ngModel)]="data.email"
+      placeholder="abc123@gmail.com"
+      name="myvalue"
+    />
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="inputPassword4"
+      [(ngModel)]="data.password"
+      placeholder="*****"
+      name="myvalue"
+    />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Current Address</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      [(ngModel)]="data.address1"
+      placeholder="1234 Main St"
+      name="myvalue"
+    />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Permanent Address</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress2"
+      [(ngModel)]="data.address2"
+      placeholder="Apartment, studio, or floor"
+      name="myvalue"
+    />
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      [(ngModel)]="data.city"
+      placeholder="Tagum"
+      name="myvalue"
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Province</label>
+    <select
+      id="inputState"
+      class="form-select"
+      [(ngModel)]="data.province"
+      name="myvalue"
+    >
+      <option selected>Davao del Norte</option>
+      <option>Davao del Sur</option>
+      <option>Davao de Oro</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputZip"
+      [(ngModel)]="data.zip"
+      placeholder="8100"
+      name="myvalue"
+    />
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" />
+      <label class="form-check-label" for="gridCheck"> Check me out </label>
+    </div>
+  </div>
+  <div class="col-12 btncenter">
+    <button (click)="submit()" class="btn btn-primary">Sign in</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Zip</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of array; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ dataItem.email }}</td>
+        <td>{{ dataItem.password }}</td>
+        <td>{{ dataItem.zip }}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>
